@@ -9,5 +9,22 @@
 </head>
 <body ng-app="messageApp">
     <h1>Hello World</h1>
+
+    <section ng-controller="MessageController as vm">
+        <div>
+            <label for="name">User Name:</label>
+            <input id="name" type="text" placeholder="User Name" ng-model="vm.newMessage.user">
+            <label for="message">Message:</label>
+            <input id="message" type="text" placeholder="Message" ng-model="vm.newMessage.message">
+            <button ng-click="vm.postMessage(vm.newMessage)">Send</button>
+        </div>
+        <div>
+            <ul>
+                <li ng-repeat=""></li>
+            </ul>
+        </div>
+
+    </section>
+
 </body>
 </html>
