@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Board</title>
+    <link rel="stylesheet" href="styles/style.css">   
+    <script src="vendors/angular.min.js"></script> 
+    <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/messageBoard.controller.js"></script>
+    <script src="scripts/services/messageBoard.service.js"></script>
+</head>
+<body ng-app="messageApp">
+    <h1>Full Stack Messaging</h1>
+
+    <section ng-controller="MessageController as vm">
+        <div>
+            <label for="name">User Name:</label>
+            <input id="name" type="text" placeholder="User Name" ng-model="vm.newMessage.user">
+            <label for="message">Message:</label>
+            <input id="message" type="text" placeholder="Message" ng-model="vm.newMessage.message">
+            <button ng-click="vm.postMessage(vm.newMessage)">Send</button>
+        </div>
+        <div>
+            <p ng-repeat="message in vm.messages.list">
+                {{message.user}} : {{message.message}}
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>

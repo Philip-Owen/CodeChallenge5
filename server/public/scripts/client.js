@@ -1,0 +1,1 @@
+const messageApp = angular.module('messageApp', []);
