@@ -6,9 +6,10 @@
     <script src="vendors/angular.min.js"></script> 
     <script src="scripts/client.js"></script>
     <script src="scripts/controllers/messageBoard.controller.js"></script>
+    <script src="scripts/services/messageBoard.service.js"></script>
 </head>
 <body ng-app="messageApp">
-    <h1>Hello World</h1>
+    <h1>Full Stack Messaging</h1>
 
     <section ng-controller="MessageController as vm">
         <div>
@@ -19,9 +20,9 @@
             <button ng-click="vm.postMessage(vm.newMessage)">Send</button>
         </div>
         <div>
-            <ul>
-                <li></li>
-            </ul>
+            <p ng-repeat="message in vm.messages.list">
+                {{message.user}} : {{message.message}}
+            </p>
         </div>
 
     </section>
