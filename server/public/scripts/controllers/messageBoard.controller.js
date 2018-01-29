@@ -6,6 +6,8 @@ messageApp.controller('MessageController', ['$http', function($http) {
 
 
     self.postMessage = function(messageObject) {
+        console.log(messageObject);
+        
         $http.post('/messageBoard', messageObject)
         .then(function (response) {
             console.log('Message post: ', response);
